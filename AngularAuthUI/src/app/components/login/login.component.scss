@@ -1,0 +1,38 @@
+.login-body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.credentials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.logbtn{
+   background-color: gold; 
+}
+.login-btn{
+   text-align: center;
+}
+
+.credentials mat-form-field{
+    width: 100%;
+   display: flex;
+   align-items: center;
+}
+.credentials mat-form-field input{
+    flex: 1;
+}
+

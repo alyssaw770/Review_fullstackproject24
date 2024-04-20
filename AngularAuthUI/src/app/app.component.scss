@@ -1,0 +1,14 @@
+.contain{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container fills the entire viewport height */
+    width: 100%;
+  }
+  
+  /* Styles for the footer */
+  app-footer {
+    margin-top: auto; /* Push the footer to the bottom of the container */
+    width: 100%;
+  }

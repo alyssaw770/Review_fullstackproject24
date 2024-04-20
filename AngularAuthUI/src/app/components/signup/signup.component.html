@@ -1,0 +1,23 @@
+<div class="signup">
+<mat-card class="signup-card">
+    <h1>Sign up</h1>
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="First Name" [formControl]="firstName" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="Last Name" [formControl]="lastName" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <input matInput type="email" placeholder="Email Address" [formControl]="email" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <input matInput type="tel" placeholder="Telephone Number" [formControl]="telephone">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <input matInput type="data" placeholder="Date of Birth" [formControl]="dateOfBirth" required>
+    </mat-form-field>
+    <div class="signup-btn">
+    <button type="submit" mat-raised-button class="signbtn">Sign Up</button>
+    </div>
+</mat-card>
+</div>
