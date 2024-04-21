@@ -1,23 +1,60 @@
 <div class="signup">
-<mat-card class="signup-card">
-    <h1>Sign up</h1>
-    <mat-form-field appearance="outline">
-        <input matInput type="text" placeholder="First Name" [formControl]="firstName" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <input matInput type="text" placeholder="Last Name" [formControl]="lastName" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <input matInput type="email" placeholder="Email Address" [formControl]="email" required>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <input matInput type="tel" placeholder="Telephone Number" [formControl]="telephone">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <input matInput type="data" placeholder="Date of Birth" [formControl]="dateOfBirth" required>
-    </mat-form-field>
-    <div class="signup-btn">
-    <button type="submit" mat-raised-button class="signbtn">Sign Up</button>
-    </div>
-</mat-card>
+    <mat-card class="signup-card">
+        <h1>Sign up</h1>
+        <form [formGroup]="signupForm">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" placeholder="First Name" formControlName="firstName" required>
+                <mat-icon matPrefix>person</mat-icon>
+                @if (signupForm.controls['firstName'].hasError('required')) {
+                    <mat-error>*First Name is required</mat-error>
+                    }
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="text" placeholder="Last Name" formControlName="lastName" required>
+                <mat-icon matPrefix>person</mat-icon>
+                @if (signupForm.controls['lastName'].hasError('required')) {
+                    <mat-error>*Last Name is required</mat-error>
+                    }
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="email" placeholder="Email Address" formControlName="email" required>
+                <mat-icon matPrefix>person</mat-icon>
+                @if (signupForm.controls['email'].hasError('required')) {
+                    <mat-error>*Email Address is required</mat-error>
+                    }
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="tel" placeholder="Telephone Number" formControlName="telephone">
+                <mat-icon matPrefix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="data" placeholder="Date of Birth" formControlName="dateOfBirth" required>
+                <mat-icon matPrefix>person</mat-icon>
+                @if (signupForm.controls['dateOfBirth'].hasError('required')) {
+                    <mat-error>*Date of Birth is required</mat-error>
+                    }
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="text" placeholder="Username" formControlName="username" required>
+                <mat-icon matPrefix>person</mat-icon>
+                @if (signupForm.controls['username'].hasError('required')) {
+                    <mat-error>*Username is required</mat-error>
+                    }
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput type="text" placeholder="Password" formControlName="password" required>
+                <mat-icon matPrefix>lock</mat-icon>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                @if (signupForm.controls['password'].hasError('required')) {
+                    <mat-error>*Password is required</mat-error>
+                    }
+            </mat-form-field>
+            <div class="signup-btn">
+                <button (click)="onSignup()" type="submit" mat-raised-button class="signbtn">Sign Up</button>
+            </div>
+        </form>
+    </mat-card>
 </div>
